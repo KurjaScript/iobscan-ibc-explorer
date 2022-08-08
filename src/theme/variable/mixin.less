@@ -1,0 +1,22 @@
+.flex(@dir, @wrap: nowrap, @jc, @ai) {
+    display: flex;
+    flex-flow: @dir @wrap;
+    justify-content: @jc;
+    align-items: @ai;
+}
+
+.hover_cursor {
+    cursor: pointer;
+    &:hover {
+        color: var(--bj-primary-color);
+    }
+}
+
+.popover_c {
+    color: var(--bj-text-second);
+    margin: -8px -4px;
+}
+
+.cursor {
+    cursor: pointer;
+}

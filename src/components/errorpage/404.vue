@@ -1,65 +1,78 @@
 <template>
-    <div class="error_page_container">
-        <div class="error_page_content_wrap">
-            <div class="error_img_content">
-                <img class="error_img" src="/src/assets/404.png" alt="">
+    <!-- todo duanjie 404 三屏适配 -->
+    <div class="error_page">
+        <div class="error_page__content">
+            <div class="error_page__content__img">
+                <img src="/src/assets/error/404.png" alt="" />
             </div>
-            <p class="error_img_title">Oops!</p>
-            <p class="error_content_description">The planet you are looking for doesn’t exist.</p>
-            <router-link :to="'/home'" class="go_back_button">Go Back</router-link>
+            <div class="error_page__content__text">
+                <p class="title">Oops!</p>
+                <p class="descripton"
+                    >The planet you are looking for doesn't exist or has been moved.</p
+                >
+                <router-link :to="'/home'" class="button">Go Back</router-link>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-export default {
-    name: "404"
-}
+    export default {
+        name: '404'
+    };
 </script>
 
 <style scoped lang="less">
-    .error_page_container{
+    .error_page {
         width: 100%;
-        min-height: 100vh;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: url("../../assets/bg_default.png") no-repeat center center;
+        background: url('../../assets/error/default_bg.png') no-repeat center center;
         background-size: cover;
-        cursor: url("../../assets/errpr_mouse_tree.png"),default !important;
-        .error_page_content_wrap{
-            max-width: 550px;
-            .error_img_content{
+        cursor: url('../../assets/error/mouse_tree.png'), default !important;
+        &__content {
+            max-width: 808px;
+            position: relative;
+            &__img {
                 width: 100%;
-                .error_img{
+
+                img {
                     width: 100%;
                 }
             }
-            .error_img_title{
-                font-size: 24px;
-                font-weight: 400;
-                line-height: 24px;
-                color:rgba(255, 255, 255, 0.65);
-                margin-top: 60px;
-            }
-            .error_content_description{
-                margin-top: 16px;
-                color: rgba(255, 255, 255, 0.65);
-                font-size: var(--bj-font-size-normal);
-                font-weight: 400;
-                line-height: 16px;
-            }
-            .go_back_button{
-                display: inline-block;
-                width: 172px;
-                height: 36px;
-                border-radius: 18px;
-                background: rgba(61, 80, 255, 1);
-                color: rgba(255, 255, 255, 1);
-                font-size: 16px;
-                line-height: 36px;
-                margin: 40px auto 0 auto;
-                cursor: pointer;
+            &__text {
+                position: absolute;
+                bottom: 3.33%;
+                left: 0;
+                right: 0;
+                margin: 0 20px;
+                .title {
+                    font-size: 40px;
+                    font-weight: 500;
+                    line-height: 48px;
+                    color: rgba(255, 255, 255, 1);
+                    margin-top: 60px;
+                }
+                .descripton {
+                    margin-top: 24px;
+                    color: rgba(255, 255, 255, 0.75);
+                    font-size: var(--bj-font-size-normal);
+                    font-weight: 400;
+                    line-height: 16px;
+                }
+                .button {
+                    display: inline-block;
+                    width: 172px;
+                    height: 36px;
+                    border-radius: 18px;
+                    background: rgba(61, 80, 255, 1);
+                    color: rgba(255, 255, 255, 1);
+                    font-size: 16px;
+                    line-height: 36px;
+                    margin: 40px auto 0 auto;
+                }
             }
         }
     }
